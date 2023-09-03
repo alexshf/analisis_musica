@@ -1,0 +1,12 @@
+\version "2.18.2"
+\sourcefileline 1164 
+ \layout { \context { \name ImproVoice \type "Engraver_group" \consists "Note_heads_engraver" \consists "Rhythmic_column_engraver"  \consists "Text_engraver" \consists "Pitch_squash_engraver" squashedPosition = #0 \override NoteHead.style = #'slash \alias Voice } \context { \Staff \accepts "ImproVoice" }} 
+ melody= 
+ { \clef treble \time 4/4  \key d \major \repeat volta 2 { fis''1 \( fis''8 \) b''16 g''16 fis''32 e''32 d''16 cis''16 d''16 cis''4 b'16 a'8. a''2 \( a''16 \) fis''16 cis''16 b'16 e''16 dis''16 a''16 g''16 g''2 \( g''16 \) e''16 d''16 cis''16 d''16 cis''16 g''16 fis''16 fis''4. gis''16 a''16 d''8 d''32 e''32 fis''16 \( fis''16 \) e''16 e''16 d''16 } \alternative { { cis''16 b'16 b'32 cis''32 d''16 \( d''8 \) cis''16 b'16 a'2 } { cis''16 b'16 b'32 cis''32 d''16 \( d''8 \) cis''16 b'16 a'2 } } \repeat volta 2 { cis''4 \( cis''16 \) d''32 cis''32 b'32 cis''32 a'16 a''4. cis''8 b'8 b''8 \( b''16 \) a''16 g''16 fis''16 fis''16 g''8. \( g''32 \) fis''32 e''32 d''32 cis''16 b'16 ais'16 b'16 cis''8 \( cis''16 \) d''16 e''8 \( e''16 \) fis''16 g''8 \( g''8 \) fis''8 e''16 d''16 cis''16 b'16 cis''16 d''32 e''32 d''8 cis''16 b'8. \( b'4 \) d''4 \( d''16 \) fis''16 e''16 d''16 b''4. a''16 gis''16 fis''32 e''32 a''16 a'8 b'8. cis''32 d''32 cis''8. b'16 a'4 d''4. fis''16 e''16 e''4. g''16 fis''16 fis''4. a''16 g''16 g''2 a'4 \( a'16 \) cis''16 e''16 g''16 g''16 e''16 fis''8 \( fis''8 \) fis''16 g''32 a''32 d''4 \( d''16 \) fis''16 a''16 c'''16 c'''16 b''8. \( b''8 \) d''8 cis''16 e''16 g''4 b'8 a'8 e''16 fis''32 g''32 \( g''16 \) fis''8 e''16 d''32 cis''32 b'8 cis''16 d''8 cis''16 d''16 d''2 } }
+acordes = \chordmode{ \repeat volta 2 { d4 d4/cis b4:m b4:m/a g4 e4/gis a4 a4/g fis4:m7 a4:m/e b4:7/dis b4:7 e4:m e4:m/d a4:7/cis a4:7 d4 d4/cis b4:m7 e4 } \alternative { { a8 d8 e8:sus e8 a2 } { a8 d8 e8:sus e8 a2 } } \repeat volta 2 { a4 a4/g fis4:m7 a4:m6/e b2/dis e4:m e4:m/d cis4:m e4:m/b fis2:7/ais b8:m g8 e8:m fis8:7.5+ b4:m b4:m/a e4:7/gis d4/fis e4 e4/d a4/cis e4 a4 a4/g d4/fis g4 e4:7/gis a4 fis4:7/ais b4 e4:m e4:m/d a2/cis d4 d4/cis b4:m7 b4:m/a g4 g4/fis e4:m e4:m/d a4/cis d8 g8 d4/a a4:7sus d2 }                                                                                                }
+ \score { 
+ << 
+ \new StaffGroup = "partitura" << 
+ \new ChordNames = "acordes" \acordes 
+ \set chordChanges = ##t \new Staff \with {midiInstrument = #"acoustic grand"} \melody >>
+>> \layout{ } \midi{ \tempo 4 = 85}}
